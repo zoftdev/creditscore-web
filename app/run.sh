@@ -4,4 +4,4 @@
 source venv/bin/activate
 
 # Run Streamlit application
-streamlit run main.py --server.port=8501 
+streamlit run src/main.py

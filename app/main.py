@@ -6,6 +6,8 @@ from dotenv import load_dotenv
 # Load environment variables from .env if present
 load_dotenv()
 
+# Docker live reload test - this comment was added to test live reload
+
 # Get OpenAI API key from environment
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 if not OPENAI_API_KEY:
@@ -43,5 +45,4 @@ if prompt := st.chat_input("Type your message..."):
             reply = f"Error: {e}"
         st.session_state["messages"].append({"role": "assistant", "content": reply})
         with st.chat_message("assistant"):
-            st.markdown(reply)
-
+            st.markdown(reply) 
