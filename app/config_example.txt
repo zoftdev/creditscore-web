@@ -1,0 +1,13 @@
+# Environment Variables Configuration
+# Copy this to .env file and fill in your values
+
+# OpenAI Configuration
+OPENAI_API_KEY=your_openai_api_key_here
+OPENAI_MODEL=gpt-4
+
+# Credit Score API Configuration
+CREDIT_SCORE_API_URL=http://localhost:8000
+CREDIT_SCORE_API_KEY=your_api_key_here
+
+# Application Configuration
+# These can be customized as needed 

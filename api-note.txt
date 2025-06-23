@@ -1,0 +1,90 @@
+# Credit Score API Test Notes
+
+## Test Summary
+**Date**: 2025-06-22 12:25:49
+**Test Name**: Search customer 'โพธิ์' and get credit score
+**Status**: API service not running (404 on health check)
+
+## Expected API Endpoints
+
+### 1. Search Customer Endpoint
+**URL**: `http://localhost:8000/search-customer`
+**Method**: POST
+**Expected Payload**:
+```json
+{
+  "name": "โพธิ์"
+}
+```
+
+**Expected Response**:
+```json
+{
+  "results": [
+    {
+      "id": "cust_001",
+      "name": "บริษัท โพธิ์ จำกัด",
+      "name_en": "Pho Company Limited",
+      "tax_id": "0123456789012",
+      "address": "123 ถนนสุขุมวิท กรุงเทพฯ",
+      "match_score": 0.95
+    },
+    {
+      "id": "cust_002", 
+      "name": "ห้างหุ้นส่วน โพธิ์ทอง",
+      "name_en": "Pho Thong Partnership",
+      "tax_id": "0123456789013",
+      "address": "456 ถนนรัชดาภิเษก กรุงเทพฯ",
+      "match_score": 0.85
+    }
+  ],
+  "total_results": 2,
+  "search_term": "โพธิ์"
+}
+```
+
+### 2. Get Credit Score Endpoint
+**URL**: `http://localhost:8000/credit-score`
+**Method**: POST
+**Expected Payload**:
+```json
+{
+  "customer_id": "cust_001"
+}
+```
+
+**Expected Response**:
+```json
+{
+  "customer_id": "cust_001",
+  "company_name": "บริษัท โพธิ์ จำกัด",
+  "credit_score": {
+    "overall_score": 750,
+    "score_range": "Good",
+    "risk_level": "Low",
+    "last_updated": "2025-06-22T12:00:00Z"
+  },
+  "financial_metrics": {
+    "total_revenue": 50000000,
+    "total_assets": 75000000,
+    "debt_ratio": 0.35,
+    "current_ratio": 1.8
+  },
+  "payment_history": {
+    "on_time_payments": 95,
+    "late_payments": 2,
+    "defaults": 0,
+    "payment_score": 92
+  },
+  "risk_factors": [
+    "Stable revenue growth",
+    "Good payment history",
+    "Low debt ratio"
+  ],
+  "recommendations": [
+    "Suitable for credit extension",
+    "Monitor quarterly financials",
+    "Consider for long-term partnership"
+  ]
+}
+```

@@ -1,11 +1,21 @@
 # Web framework for creating the chat interface
-streamlit>=1.46.0
+streamlit>=1.32.0
 
 # OpenAI API client for GPT-4 integration
-openai>=1.88.0
+openai>=1.12.0
 
 # Environment variable management
 python-dotenv>=1.1.0
 
 # HTTP client library (required by OpenAI client)
-httpx>=0.28.0 
+httpx>=0.25.2
+
+# LangChain integration
+langchain>=0.1.0
+langchain-openai>=0.0.5
+
+# Pydantic for data validation
+pydantic>=2.5.0
+
+# Requests for making HTTP requests
+requests>=2.32.4 
